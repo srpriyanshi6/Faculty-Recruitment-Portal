@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    </head>
+<body class="bg-formbg bg-cover">
+    <header class="flex items-center justify-center text-3xl mb-0 h-[80px] bg-indigo-900 text-cyan-100">
+        <div><img src="/images/logo.png" class="h-[50px]"></div>
+       
+    </header>
+
+    <header class="flex items-center justify-between px-9  mb-0 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-3xl">Application Portal</div>
+        <a href="./"><div class=" hover:cursor-pointer">
+            <img src="/images/logout.png" class="inline align-top mr-1"><p class="inline text-white">Logout</p>
+        </div></a>
+    </header>
+    <header class="flex items-center justify-between px-9 mt-0 mb-4 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-xl">Application No:  <%= AppNo %>  </div>
+        <div class=" text-cyan-100 text-xl">Username: <%= Username %></div>
+    </header>
+<!-- the form starts here  -->
+    <div class="flex justify-center">
+        <div class="w-screen sm:w-9/12 border-2 rounded-lg border-blue-950 px-7 py-8 mb-4 bg-gray-100">
+        <form id="application-form" method="POST" action="/form3f">
+            <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-5">
+                <p class="text-3xl mb-2 font-semibold leading-7 text-gray-900">Professional Information</p>
+                <!-- This is for the outer overall form container  -->
+                <div class="mt-10 mb-2 grid grid-cols-1 gap-x-6 gap-y-[80] sm:grid-cols-6">
+                    <!-- The div below this line is where Employment history box starts -->
+                    <div id="Employment_History" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                            <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                                <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Employment History</p> 
+                                <button type="button" id="add_eh" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                            </div>
+                            <div  class="field-set grid sm:col-span-7 sm:grid-cols-7 gap-x-6 gap-y-1 px-0 py-0">
+                                <div class="sm:col-span-2 sm:col-start-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Position&#42</label>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Organisation&#42</label>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Joining&#42</label>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Leaving&#42</label>
+                                </div>
+                            </div>
+                            <% for(let i=0; i < EmpHis.length; i++){ %>
+                                <div  class="field-set grid sm:col-span-7 sm:grid-cols-7 gap-x-6 gap-y-1 px-0 py-0">
+                                <div class="sm:col-span-2 sm:col-start-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Eh_Position" value="<%= Eh_Position[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <div class="mt-2">
+                                    <input type="text" name="Eh_Organisation" value="<%= Eh_Organisation[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Eh_DOJ" value='<%= Eh_DOJ[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Eh_DOL" value='<%= Eh_DOL[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                                </div>
+                                </div>
+                            <% }%>
+                            
+                        <script>
+                            document.getElementById('add_eh').addEventListener('click', function() {
+                            var container = document.getElementById('Employment_History');
+                            var newFieldSet = document.createElement('div');
+                            newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-7', 'sm:grid-cols-7', 'gap-x-6', 'gap-y-1', 'px-0', 'py-0');
+                              newFieldSet.innerHTML = `
+                              <div class="sm:col-span-2 sm:col-start-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Eh_Position" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <div class="mt-2">
+                                    <input type="text" name="Eh_Organisation" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Eh_DOJ" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Eh_DOL" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                                </div>
+                              `;
+                              container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>                      
+                    </div>
+
+                    <!-- Research Supervision studentname,studentdegree,title,status,completionyear, startyear -->
+                    <div id="Research_Supervision" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                        <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                            <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Research Supervision</p> 
+                            <button type="button" id="add_rs" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                        </div>
+                        <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Student Name&#42</label>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Student Degree&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Status&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Starting Year&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Completion Year&#42</label>
+                            </div>
+                        </div>
+                        <% for(let i=0; i < ResSup.length; i++){ %>
+                            <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-3 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_Name" value="<%= Rs_Name[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_Degree" value="<%= Rs_Degree[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_Title" value='<%= Rs_Title[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_Status" value='<%= Rs_Status[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_DOS" value='<%= Rs_DOS[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rs_DOC" value='<%= Rs_DOC[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            </div>
+                        <% }%>
+                        
+                        <script>
+                            document.getElementById('add_rs').addEventListener('click', function() {
+                            var container = document.getElementById('Research_Supervision');
+                            var newFieldSet = document.createElement('div');
+                            newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-7', 'sm:grid-cols-9', 'gap-x-3', 'gap-y-1', 'px-0', 'py-0');
+                            newFieldSet.innerHTML = `
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_Name" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_Degree"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_Title"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_Status" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_DOS" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Rs_DOC"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                                </div>
+                            `;
+                            container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>                      
+                    </div>
+
+                    <!-- Awards and Recognitions -->
+                    <div id="Awards" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                        <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                            <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Awards and Recognitions</p> 
+                            <button type="button" id="add_aw" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                        </div>
+                        <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-3 sm:col-start-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Award Name&#42</label>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Presentor&#42</label>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Year&#42</label>
+                            </div>
+                        </div>
+                        <% for(let i=0; i < Aw.length; i++){ %>
+                            <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-3 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-3 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Name" value="<%= Aw[i].Award_Name %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Presentor" value="<%= Aw[i].Presenter %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Year" value='<%= Aw[i].Year %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            </div>
+                        <% }%>
+                        
+                        <script>
+                            document.getElementById('add_aw').addEventListener('click', function() {
+                            var container = document.getElementById('Awards');
+                            var newFieldSet = document.createElement('div');
+                            newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-7', 'sm:grid-cols-9', 'gap-x-3', 'gap-y-1', 'px-0', 'py-0');
+                            newFieldSet.innerHTML = `
+                            <div class="sm:col-span-3 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Name" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Presentor" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Aw_Year" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            `;
+                            container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>                      
+                    </div>
+
+                    <!-- Professional Societies -->
+                    <div id="Professional_Societies" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                        <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                            <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Professional Societies</p> 
+                            <button type="button" id="add_rso" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                        </div>
+                        <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-5 sm:col-start-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Name Of Society&#42</label>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Membership Status&#42</label>
+                            </div>
+                        </div>
+                        <% for(let i=0; i < Rso.length; i++){ %>
+                            <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-3 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-5 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rso_Name" value="<%= Rso[i].name %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <div class="mt-2">
+                                <input type="text" name="Rso_Status" value="<%= Rso[i].membership_status %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            </div>
+                        <% }%>
+                        
+                        <script>
+                            document.getElementById('add_rso').addEventListener('click', function() {
+                            var container = document.getElementById('Professional_Societies');
+                            var newFieldSet = document.createElement('div');
+                            newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-7', 'sm:grid-cols-9', 'gap-x-3', 'gap-y-1', 'px-0', 'py-0');
+                            newFieldSet.innerHTML = `
+                            <div class="sm:col-span-5 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Rso_Name" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <div class="mt-2">
+                                <input type="text" name="Rso_Status" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            `;
+                            container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>                      
+                    </div>
+                    
+                <!-- the form rectangles should all be enclosed inside this div  -->
+                </div>
+            </div>
+            </div> 
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <a href="./form2">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Back</button>
+                </a>
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save & Next</div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+</body>
+</html>

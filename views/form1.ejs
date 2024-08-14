@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    </head>
+<body class="bg-formbg bg-cover">
+    <header class="flex items-center justify-center text-3xl mb-0 h-[80px] bg-indigo-900 text-cyan-100">
+        <div><img src="/images/logo.png" class="h-[50px]"></div>
+       
+    </header>
+
+    <header class="flex items-center justify-between px-9  mb-0 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-3xl">Application Portal</div>
+        <a href="./"><div class=" hover:cursor-pointer">
+            <img src="/images/logout.png" class="inline align-top mr-1"><p class="inline text-white">Logout</p>
+        </div></a>
+    </header>
+    <header class="flex items-center justify-between px-9 mt-0 mb-4 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-xl">Application No: <%= AppNo %> </div>
+        <div class=" text-cyan-100 text-xl">Username: <%=Username%></div>
+    </header>
+<!-- the form starts here  -->
+    <div class="flex justify-center">
+        <div class="w-screen sm:w-9/12 border-2 rounded-lg border-blue-950 px-7 py-8 mb-4 bg-gray-100">
+        <form id="application-form" method="POST" action="/form1f">
+            <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-5">
+                <p class="text-3xl mb-2 font-semibold leading-7 text-gray-900">Personal Information</p>
+                
+                <div class="mt-10 mb-2 grid grid-cols-1 gap-x-6 gap-y-[120] sm:grid-cols-6">
+                    <!-- Name Fields (3 fields in one row) -->
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-2 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">First name&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="F_Name" value="<%= F_Name%>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Middle name</label>
+                            <div class="mt-2">
+                            <input type="text" name="M_Name" value="<%= M_Name%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Last name&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="L_Name" value="<%= L_Name%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        <!-- Next 3 input set row  -->
+                        
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Birth&#42</label>
+                            <div class="mt-2">
+                            <input name="DOB" value="<%= DOB %>" type="date"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Nationality&#42</label>
+                            <div class="mt-2">
+                            <select id="Nationality" name="Nationality" value="<%=Nationality%>" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="<%=Nationality%>"><%=Nationality%></option>
+                                <option value="Indian">Indian</option>
+                                <option value="OCI">OCI</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Gender&#42</label>
+                            <div class="mt-2">
+                            <select id="Gender" name="Gender" value="<%=Gender%>" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="<%=Gender%>"><%= Gender %></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            </div>
+                        </div>
+                        
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Category&#42</label>
+                            <div class="mt-2">
+                            <select id="Category" name="Category" value="<%= Category%>" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="<%= Category%>"><%= Category%></option>
+                                <option value="General">General</option>
+                                <option value="OBC">OBC</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                                <option value="PWD">PWD</option>
+                                <option value="EWS">EWS</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Department&#42</label>
+                            <div class="mt-2">
+                            <select id="Department" name="Department" value="<%= Department%>" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="<%= Department%>"><%= Department%></option>
+                                <option value="CSE">CSE</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Chemical">Chemical</option>
+                                <option value="Physics">Physics</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Position&#42</label>
+                            <div class="mt-2">
+                            <select id="Postion" name="Position" value="<%=Position%>" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="<%= Position%>"><%= Position%></option>
+                                <option value="Professor">Professor</option>
+                                <option value="Assistant Professor">Assistant Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        
+                        
+                        <!-- ID types section  -->
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">ID Type *</label>
+                            <div class="mt-2">
+                            <select id="ID_type" name="ID_type"  class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                <option value="AADHAR">AADHAR</option>
+                                <option value="PAN-CARD">PAN-CARD</option>
+                                <option value="Driving Liscence">Driving Liscence</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">ID Number *</label>
+                            <div class="mt-2">
+                            <input name="ID_no" value="<%= ID_no%>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-4 my-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-6  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Contact Information</p>
+                        <br></div>
+                        
+                        
+                        <div class="sm:col-span-3">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Email address *</label>
+                            <div class="mt-2">
+                            <input name="Email" value="<%= Email%>" type="email"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Phone Number *</label>
+                            <div class="mt-2">
+                            <input name="Mobile_no" value="<%= Mobile_no%>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        <div class="col-span-full">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Address Line 1&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="Add_l1" value="<%= Add_l1%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="col-span-full">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Address Line 2</label>
+                            <div class="mt-2">
+                            <input type="text" name="Add_l2" value="<%= Add_l2%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-2 sm:col-start-1">
+                            <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="City" value="<%= City%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="region" class="block text-sm font-medium leading-6 text-gray-900">State / Province</label>
+                            <div class="mt-2">
+                            <input type="text" name="State" value="<%= State%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="PIN-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP / Postal code</label>
+                            <div class="mt-2">
+                            <input type="text" name="Pincode" value="<%= Pincode%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div> 
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <!-- <a href="./form1">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Back</button>
+                </a> -->
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save & Next</div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+</body>
+</html>

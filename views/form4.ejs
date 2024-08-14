@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    </head>
+<body class="bg-formbg bg-cover">
+    <header class="flex items-center justify-center text-3xl mb-0 h-[80px] bg-indigo-900 text-cyan-100">
+        <div><img src="/images/logo.png" class="h-[50px]"></div>
+       
+    </header>
+
+    <header class="flex items-center justify-between px-9  mb-0 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-3xl">Application Portal</div>
+        <a href="./"><div class=" hover:cursor-pointer">
+            <img src="/images/logout.png" class="inline align-top mr-1"><p class="inline text-white">Logout</p>
+        </div></a>
+    </header>
+    <header class="flex items-center justify-between px-9 mt-0 mb-4 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-xl">Application No:  <%= AppNo %>  </div>
+        <div class=" text-cyan-100 text-xl">Username: <%= Username %></div>
+    </header>
+<!-- the form starts here  -->
+    <div class="flex justify-center">
+        <div class="w-screen sm:w-9/12 border-2 rounded-lg border-blue-950 px-7 py-8 mb-4 bg-gray-100">
+        <form id="application-form" method="POST" action="/form4f">
+            <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-5">
+                <p class="text-3xl mb-2 font-semibold leading-7 text-gray-900">More Professional Information</p>
+                <!-- This is for the outer overall form container  -->
+                <div class="mt-10 mb-2 grid grid-cols-1 gap-x-6 gap-y-[80] sm:grid-cols-6">
+
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-2 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">No. of International Journals&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="nij" value="<%= nij%>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Number of International Conference Papers&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="nic" value="<%= nic%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Number of National Journals&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="nnj" value="<%= nnj%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Number of National Conference Papers&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="nnc" value="<%= nnc%>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Number of Books&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="n_b" value="<%= n_b%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Number of Patents&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="n_p" value="<%= n_p%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- The div below this line is where Employment history box starts -->
+
+                    
+
+                    <div id="Patents" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                            <div  class="sm:col-span-6  border-b border-gray-900/30 px-0 py-0">
+                                <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">List Of Patents</p> 
+                                <button type="button" id="add_pt" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                            </div>
+                            <div  class="field-set grid sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                                <div class="sm:col-span-2 sm:col-start-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Inventor&#42</label>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Filing&#42</label>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Publication&#42</label>
+                                </div>
+                                <div class="sm:col-span-1 ">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Patent Number&#42</label>
+                                </div>
+                                <div class="sm:col-span-1 ">
+                                    <label class="block text-sm font-medium leading-6 text-gray-900">Status&#42</label>
+                                </div>
+                            </div>
+                            <% for(let i=0; i < Pt.length; i++){ %>
+                                <div  class="field-set grid sm:col-span-7 sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                                <div class="sm:col-span-2 sm:col-start-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_inventor" value="<%= Pt_inventor[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_title" value="<%= Pt_title[i]%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-1">
+                                    <input type="date" name="Pt_DOF" value='<%= Pt_DOF[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-1">
+                                    <input type="date" name="Pt_DOP" value='<%= Pt_DOP[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1 ">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_number" value="<%= Pt_number[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_status" value="<%= Pt_status[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                                </div>
+                                </div>
+                            <% }%>
+                            
+                        <script>
+                            document.getElementById('add_pt').addEventListener('click', function() {
+                            var container = document.getElementById('Patents');
+                            var newFieldSet = document.createElement('div');
+                            newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-7', 'sm:grid-cols-9', 'gap-x-6', 'gap-y-1', 'px-0', 'py-0');
+                              newFieldSet.innerHTML = `
+                              <div class="sm:col-span-2 sm:col-start-1">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_inventor" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_title" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Pt_DOF" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="mt-2">
+                                    <input type="date" name="Pt_DOP"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1 ">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_number" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1 ">
+                                    <div class="mt-2">
+                                    <input type="text" name="Pt_status" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                                </div>
+                              `;
+                              container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>                      
+                    </div>
+
+                    <div id="Pulications" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 py-5 px-5 rounded-md">
+                        <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                            <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">List Of Publications</p> 
+                            <button type="button" id="add_pb" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button>
+                        </div>
+                        <div  class="grid sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Type&#42</label>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Author&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Year Of Publication&#42</label>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <label class="block text-sm font-medium leading-6 text-gray-900">Document_Id&#42</label>
+                            </div>
+                        </div>
+                        <% for(let i=0; i < Pb.length; i++){ %>
+                            <div  class="field-set grid sm:grid-cols-9 gap-x-6 gap-y-1 px-0 py-0">
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_type" value="<%= Pb_type[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_title" value="<%= Pb_title[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_author" value='<%= Pb_author[i] %>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_YOP" value='<%= Pb_YOP[i]%>'  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_docid" value="<%= Pb_docid[i] %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                            </div>
+                        <% }%>
+                        
+                    <script>
+                        document.getElementById('add_pb').addEventListener('click', function() {
+                        var container = document.getElementById('Pulications');
+                        var newFieldSet = document.createElement('div');
+                        newFieldSet.classList.add('field-set', 'grid', 'sm:col-span-8', 'sm:grid-cols-9', 'gap-x-6', 'gap-y-1', 'px-0', 'py-0');
+                          newFieldSet.innerHTML = `
+                          <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_type" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_title" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_author" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_YOP" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="mt-2">
+                                <input type="text" name="Pb_docid" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white mt-2">Remove</button>
+                            </div>
+                          `;
+                          container.appendChild(newFieldSet);
+                        });
+
+                        document.addEventListener('click', function(event) {
+                            if (event.target.classList.contains('remove-field')) {
+                                event.target.closest('.field-set').remove();
+                            }
+                        });
+                    </script>                      
+                </div>
+                    
+                <!-- the form rectangles should all be enclosed inside this div  -->
+                </div>
+            </div>
+            </div> 
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <a href="./form3">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Back</button>
+                </a>
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save & Next</div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+</body>
+</html>

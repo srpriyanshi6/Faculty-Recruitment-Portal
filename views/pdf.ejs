@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    
+        <div class="w-screen sm:w-12/12 sm:col-span-4 border-2 border-blue-950 px-7 py-8 mb-4 bg-gray-100">
+
+            <header class="flex items-center justify-between text-3xl mb-3 px-4 py-2 h-[80px]  text-cyan-100">
+                <div class=""><img src="/images/lg.png" class="w-[350px] "></div>
+                <div><img src="/uploads/<%=AppNo%>d_pro.png" class=" mt-4 h-[150px] w-[150px]"></div>
+            </header>
+
+            <h1 class="font-medium text-3xl">Personal Information</h1>
+            <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">First name&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="F_Name" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= F_Name%></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Middle name</label>
+                    <div class="mt-2">
+                    <div type="text" name="M_Name" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= M_Name%></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Last name&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="L_Name" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= L_Name%></div>
+                    </div>
+                </div>
+
+                <!-- Next 3 input set row  -->
+                
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Birth(YYYY-MM-DD)</label>
+                    <div class="mt-2">
+                    <div name="DOB" value="" type="date"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= DOB %></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Nationality&#42</label>
+                    <div class="mt-2">
+                    <div id="Nationality" name="Nationality" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"><%=Nationality%></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Gender&#42</label>
+                    <div class="mt-2">
+                    <div id="Gender" name="Gender"  class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <%= Gender %>  
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Category&#42</label>
+                    <div class="mt-2">
+                    <div id="Category" name="Category" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <%= Category%>
+                    </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Department&#42</label>
+                    <div class="mt-2">
+                    <div id="Department" name="Department" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <%= Department%>
+                    </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Position&#42</label>
+                    <div class="mt-2">
+                    <div id="Postion" name="Position" class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <%= Position%>
+                    </div>
+                    </div>
+                </div>
+
+                
+                
+                <!-- ID types section  -->
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">ID Type *</label>
+                    <div class="mt-2">
+                    <div id="ID_type" name="ID_type"  class="block w-full h-9 rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <%=ID_type%>
+                    </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">ID Number *</label>
+                    <div class="mt-2">
+                    <div name="ID_no" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ID_no%></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-6  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Contact Information</p>
+                <br></div>
+                
+                
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Email address *</label>
+                    <div class="mt-2">
+                    <div name="Email" value="" type="email"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Email%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Phone Number *</label>
+                    <div class="mt-2">
+                    <div name="Mobile_no" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Mobile_no%></div> 
+                    </div>
+                </div>
+
+                <div class="col-span-full">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Address Line 1&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="Add_l1" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Add_l1%></div> 
+                    </div>
+                </div>
+                <div class="col-span-full">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Address Line 2</label>
+                    <div class="mt-2">
+                    <div type="text" name="Add_l2" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Add_l2%></div> 
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="City" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= City%></div> 
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="region" class="block text-sm font-medium leading-6 text-gray-900">State / Province</label>
+                    <div class="mt-2">
+                    <div type="text" name="State" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= State%></div> 
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="PIN-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP / Postal code</label>
+                    <div class="mt-2">
+                    <div type="text" name="Pincode" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pincode%></div> 
+                    </div>
+                </div>
+
+
+            </div>
+        
+
+
+            <h1 class="font-medium text-3xl mt-3">Educational Information</h1>
+            <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                <div class="sm:col-span-8  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Details Of PhD</p>
+                    <br></div>
+                <div class="sm:col-span-4 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="phd_uni" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= phd_uni %></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Department</label>
+                    <div class="mt-2">
+                    <div type="text" name="phd_Dept" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= phd_Dept%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Name Of PhD Supervisor&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="phd_sn" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= phd_sn%></div> 
+                    </div>
+                </div>
+
+                
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Date of Successful Thesis Defence&#42</label>
+                    <div class="mt-2">
+                    <div name="phd_dos" value="" type="date"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%=phd_dos%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="phd_yoj" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%=phd_yoj%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-8">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Title Of Thesis&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="phd_title" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%=phd_title%></div> 
+                    </div>
+                </div>
+
+                <div class="sm:col-span-8  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Academic Details - M. Tech./ M.E./ PG Details</p>
+                    <br></div>
+                <div class="sm:col-span-4 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="pg_uni" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_uni %></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Degree/Certificate</label>
+                    <div class="mt-2">
+                    <div type="text" name="pg_deg" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_deg %></div> 
+                    </div>
+                </div>
+
+
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Branch/Stream&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="pg_bra" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_bra %></div> 
+                    </div>
+                </div>                       
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                    <div class="mt-2">
+                    <div name="pg_yoj" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_yoj %></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Year of Completion&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="pg_yoc" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_yoc %></div> 
+                    </div>
+                </div>
+                
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Duration (in years)&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="pg_dur" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_dur %></div> 
+                    </div>
+                </div>                       
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Percentage/ CGPA&#42</label>
+                    <div class="mt-2">
+                    <div name="pg_per" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_per %></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Division/Class&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="pg_div" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= pg_div %></div> 
+                    </div>
+                </div>
+
+                <div class="sm:col-span-8  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Academic Details - B. Tech /B.E. / UG Details</p>
+                    <br></div>
+                <div class="sm:col-span-4 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="ug_uni" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_uni %></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Degree/Certificate</label>
+                    <div class="mt-2">
+                    <div type="text" name="ug_deg" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_deg %></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Branch/Stream&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="ug_bra" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_bra %></div>
+                    </div>
+                </div>                       
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                    <div class="mt-2">
+                    <div name="ug_yoj" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_yoj %></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Year of Completion&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="ug_yoc" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_yoc %></div>
+                    </div>
+                </div>             
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Duration (in years)&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="ug_dur" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_dur %></div>
+                    </div>
+                </div>                       
+                <div class="sm:col-span-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Percentage/ CGPA&#42</label>
+                    <div class="mt-2">
+                    <div name="ug_per" value="" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_per %></div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Division/Class&#42</label>
+                    <div class="mt-2">
+                        <div type="text" name="ug_div" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= ug_div %></div>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-9  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Additional Educational Qualification (If any)</p>
+                    <!-- <button type="button" id="add_edu" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add More</button> -->
+                    <br>
+                </div>                        
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">University /Institute</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Degree /Certificate</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Branch /Stream</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Year of Joining</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Year of Completion</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Duration (in years)</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Percentage/ CGPA</label>
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-base font-medium leading-6 text-gray-900">Division/Class</label>
+                </div>
+                <div class="sm:col-span-1"></div>
+
+                <% for(let i=0; i < cnt_ae; i++){ %>
+                    <div class="sm:col-span-9 grid sm:grid-cols-8 gap-x-2 field-set">
+                        <div class="sm:col-span-1 col-start-1 ">
+                            <div name="add_uni"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_uni[i] %></div>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_deg"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_deg[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_bra"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_bra[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_yoj"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_yoj[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_yoc"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_yoc[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_dur"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_dur[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_per"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_per[i] %></div>
+
+                        </div>
+                        <div class="sm:col-span-1">
+                            <div name="add_div"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= add_div[i] %></div>
+                        </div>
+                    </div>
+                <% } %>
+
+                
+            
+            
+            </div>
+            
+
+            <h1 class="font-medium text-3xl sm:col-span-8 mt-3">Professional Information</h1><br>
+            <div class="bg-white border-2 border-gray-300 sm:col-span-9 mt-1 py-5 px-5 rounded-md">
+                <div  class="sm:col-span-6  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Employment History</p> 
+                    <!-- <button type="button" id="add_eh" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button> -->
+                </div>
+                <div  class="field-set grid sm:col-span-7 sm:grid-cols-6 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Position&#42</label>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Organisation&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Joining&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Leaving&#42</label>
+                    </div>
+                </div>
+                <div  class="field-set grid sm:col-span-7 sm:grid-cols-6 gap-x-6 gap-y-1 px-0 py-0">
+                    <% for(let i=0; i < cnt10; i++){ %>
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Eh_Position" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Eh_Position[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Eh_Organisation" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Eh_Organisation[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="date" name="Eh_DOJ" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Eh_DOJ[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="date" name="Eh_DOL" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Eh_DOL[i] %></div>
+                        </div>
+                    </div>
+                    <% }%>
+                </div>
+                
+                 
+                
+                <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Research Supervision</p> 
+                    <!-- <button type="button" id="add_rs" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button> -->
+                </div>
+                <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Student Name&#42</label>
+                    </div>
+                    <div class="sm:col-span-2 sm:col-start-3">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Student Degree&#42</label>
+                    </div>
+                    <div class="sm:col-span-1 sm:col-start-5">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Status&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Starting Year&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Completion Year&#42</label>
+                    </div>
+                </div>
+                <% for(let i=0; i < cnt2; i++){ %>
+                    <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-3 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_Name"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_Name[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_Degree"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_Degree[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_Title"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_Title[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_Status"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_Status[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_DOS"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_DOS[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rs_DOC"   class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rs_DOC[i] %></div> 
+                        </div>
+                    </div>
+                    
+                    </div>
+                <% }%>
+
+
+                <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Awards and Recognitions</p> 
+                    <!-- <button type="button" id="add_aw" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button> -->
+                </div>
+                <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-3 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Award Name&#42</label>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Presentor&#42</label>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Year&#42</label>
+                    </div>
+                </div>
+                <% for(let i=0; i < cnt3; i++){ %>
+                    <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-3 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-3 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Aw_Name" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Aw[i].Award_Name %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="mt-2">
+                        <div type="text" name="Aw_Presentor" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Aw[i].Presenter %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Aw_Year" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Aw[i].Year %></div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                <% }%>
+                                  
+                <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Professional Societies</p> 
+                    <!-- <button type="button" id="add_rso" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add Field</button> -->
+                </div>
+                <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-5 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Name Of Society&#42</label>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Membership Status&#42</label>
+                    </div>
+                </div>
+                <% for(let i=0; i < cnt4; i++){ %>
+                    <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-3 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-5 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Rso_Name" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rso[i].name %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <div class="mt-2">
+                        <div type="text" name="Rso_Status" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Rso[i].membership_status %></div> 
+                        </div>
+                    </div>
+                    
+                    </div>
+                <% }%>
+                
+            
+                                     
+            
+                
+
+            </div>
+
+            <h1 class="font-medium text-3xl mt-3 inline">Publications Information</h1>
+            
+            <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">                
+                <div  class="sm:col-span-7  border-b border-gray-900/30 px-0 py-0">
+                <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Publication Summary</p> 
+                </div>
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">No. of International Journals&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="nij" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= nij%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Number of International Conference Papers&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="nic" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= nic%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Number of National Journals&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="nnj" value=">"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= nnj%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Number of National Conference Papers&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="nnc" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= nnc%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Number of Books&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="n_b" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= n_b%></div> 
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium leading-6 text-gray-900">Number of Patents&#42</label>
+                    <div class="mt-2">
+                    <div type="text" name="n_p" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= n_p%></div> 
+                    </div>
+                </div>
+
+                <div  class="sm:col-span-8 sm:col-start-1  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl font-weight-450 leading-7 text-gray-900">List Of Patents</p> 
+                </div>
+                <div  class="field-set sm:col-span-8 grid sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Inventor&#42</label>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Filing&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Date Of Publication&#42</label>
+                    </div>
+                    <div class="sm:col-span-1 ">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Patent Number&#42</label>
+                    </div>
+                    <div class="sm:col-span-1 ">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Status&#42</label>
+                    </div>
+                </div>
+                <% for(let i=0; i < cnt5; i++){ %>
+                    <div  class="field-set grid sm:col-span-7 sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Pt_inventor" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_inventor[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Pt_title" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_title[i]%></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-1">
+                        <div type="date" name="Pt_DOF" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_DOF[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-1">
+                        <div type="date" name="Pt_DOP" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_DOP[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1 ">
+                        <div class="mt-2">
+                        <div type="text" name="Pt_number" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_number[i] %></div> 
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Pt_status" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pt_status[i] %></div> 
+                        </div>
+                    </div>
+                    </div>
+                <% }%>
+
+                <div  class="sm:col-span-8  border-b border-gray-900/30 px-0 py-0">
+                    <p class=" inline text-xl sm:col-span-8 font-weight-450 leading-7 text-gray-900">List Of Publications</p> 
+                </div>
+                <div  class="grid sm:grid-cols-8 sm:col-span-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Type&#42</label>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Title&#42</label>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Author&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Year Of Publication&#42</label>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Document_Id&#42</label>
+                    </div>
+                </div>
+                <% for(let i=0; i < cnt6; i++){ %>
+                    <div  class="field-set grid sm:col-span-8 sm:grid-cols-8 gap-x-6 gap-y-1 px-0 py-0">
+                    <div class="sm:col-span-2 sm:col-start-1">
+                        <div class="mt-2">
+                        <div type="text" name="Pb_type" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pb_type[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Pb_title" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pb_title[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <div class="mt-2">
+                        <div type="text" name="Pb_author" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pb_author[i] %></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Pb_YOP" value=''  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pb_YOP[i]%></div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <div class="mt-2">
+                        <div type="text" name="Pb_docid" value="" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"><%= Pb_docid[i] %></div>
+                        </div>
+                    </div>
+                    </div>
+                <% }%>
+
+
+
+            </div>
+
+            <div class="mt-5">
+                <img src="/uploads/<%=AppNo%>d_sig.png" class="mb-2 w-[200px]">
+                <p>Signature of The Applicant</p>
+            </div>
+        
+        
+        </div>
+        
+
+
+    
+    
+    <form method="POST" action="/pdf" class="block">
+        <button type="submit" class="bg-gray-600 text-white hover:bg-gray-400 font-bold py-2 px-4 mb-5 rounded">Logout</button>
+    </form>
+    
+    <button onclick="window.print();" class="bg-gray-600 text-white hover:bg-gray-400 font-bold mb-5 py-2 px-4 rounded">Print Application</button>
+
+</body>

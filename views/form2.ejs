@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    </head>
+<body class="bg-formbg bg-cover">
+    <header class="flex items-center justify-center text-3xl mb-0 h-[80px] bg-indigo-900 text-cyan-100">
+        <div><img src="/images/logo.png" class="h-[50px]"></div>
+       
+    </header>
+
+    <header class="flex items-center justify-between px-9  mb-0 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-3xl">Application Portal</div>
+        <a href="./"><div class=" hover:cursor-pointer">
+            <img src="/images/logout.png" class="inline align-top mr-1"><p class="inline text-white">Logout</p>
+        </div></a>
+    </header>
+    <header class="flex items-center justify-between px-9 mt-0 mb-4 h-[45px] bg-slate-600">
+        <div class=" text-cyan-100 text-xl">Application No: <%= AppNo %> </div>
+        <div class=" text-cyan-100 text-xl">Username: <%=Username%></div>
+    </header>
+<!-- the form starts here  -->
+    <div class="flex justify-center">
+        <div class="w-screen sm:w-9/12 border-2 rounded-lg border-blue-950 px-7 py-8 mb-4 bg-gray-100">
+        <form id="application-form" method="POST" action="/form2f">
+            <div class="space-y-12">
+            <div class="border-b border-gray-900/10 pb-5">
+                <p class="text-3xl mb-2 font-semibold leading-7 text-gray-900">Educational Information</p>
+                
+                <div class="mt-10 mb-2 grid grid-cols-1 gap-x-6 gap-y-[120] sm:grid-cols-6">
+                    <!-- Name Fields (3 fields in one row) -->
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-1 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-6  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Details Of PhD</p>
+                            <br></div>
+                        <div class="sm:col-span-3 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="phd_uni" value="<%= phd_uni %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Department</label>
+                            <div class="mt-2">
+                            <input type="text" name="phd_Dept" value="<%= phd_Dept%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Name Of PhD Supervisor&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="phd_sn" value="<%= phd_sn%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                        
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Date of Successful Thesis Defence&#42</label>
+                            <div class="mt-2">
+                            <input name="phd_dos" value="<%=phd_dos%>" type="date"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="phd_yoj" value="<%=phd_yoj%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-6">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Title Of Thesis&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="phd_title" value="<%=phd_title%>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <!-- Name Fields (3 fields in one row) -->
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-6  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Academic Details - M. Tech./ M.E./ PG Details</p>
+                            <br></div>
+                        <div class="sm:col-span-3 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="pg_uni" value="<%= pg_uni %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Degree/Certificate</label>
+                            <div class="mt-2">
+                            <input type="text" name="pg_deg" value="<%= pg_deg %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Branch/Stream&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="pg_bra" value="<%= pg_bra %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>                       
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                            <div class="mt-2">
+                            <input name="pg_yoj" value="<%= pg_yoj %>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Year of Completion&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="pg_yoc" value="<%= pg_yoc %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Duration (in years)&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="pg_dur" value="<%= pg_dur %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>                       
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Percentage/ CGPA&#42</label>
+                            <div class="mt-2">
+                            <input name="pg_per" value="<%= pg_per %>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Division/Class&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="pg_div" value="<%= pg_div %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-white border-2 border-gray-300 sm:col-span-6 mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-6  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Academic Details - B. Tech /B.E. / UG Details</p>
+                            <br></div>
+                        <div class="sm:col-span-3 sm:col-start-1">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">University/Institute&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="ug_uni" value="<%= ug_uni %>" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Degree/Certificate</label>
+                            <div class="mt-2">
+                            <input type="text" name="ug_deg" value="<%= ug_deg %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Branch/Stream&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="ug_bra" value="<%= ug_bra %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>                       
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Year of Joining&#42</label>
+                            <div class="mt-2">
+                            <input name="ug_yoj" value="<%= ug_yoj %>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Year of Completion&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="ug_yoc" value="<%= ug_yoc %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Duration (in years)&#42</label>
+                            <div class="mt-2">
+                            <input type="text" name="ug_dur" value="<%= ug_dur %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>                       
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Percentage/ CGPA&#42</label>
+                            <div class="mt-2">
+                            <input name="ug_per" value="<%= ug_per %>" type="text"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Division/Class&#42</label>
+                            <div class="mt-2">
+                                <input type="text" name="ug_div" value="<%= ug_div %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id = "ADD_EDU" class="bg-white border-2 border-gray-300 sm:col-span-6 mt-4 grid grid-cols-9 gap-x-6 gap-y-8 py-5 px-5 rounded-md">
+                        <div class="sm:col-span-9  border-b border-gray-900/30"><p class=" inline text-xl font-weight-450 leading-7 text-gray-900">Additional Educational Qualification (If any)</p>
+                            <button type="button" id="add_edu" class="ml-3 text-xs border-blue-300 bg-cyan-600 mb-2 px-2 py-[6px] rounded-md text-white">Add More</button>
+                            <br>
+                        </div>                        
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">University /Institute</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Degree /Certificate</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Branch /Stream</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Year of Joining</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Year of Completion</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Duration (in years)</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Percentage/ CGPA</label>
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label class="block text-base font-medium leading-6 text-gray-900">Division/Class</label>
+                        </div>
+                        <div class="sm:col-span-1"></div>
+
+                        <% for(let i=0; i < cnt_ae; i++){ %>
+                            <div class="sm:col-span-9 grid grid-cols-9 gap-x-2 field-set">
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_uni" value="<%= add_uni[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_deg" value="<%= add_deg[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_bra" value="<%= add_bra[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_yoj" value="<%= add_yoj[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_yoc" value="<%= add_yoc[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_dur" value="<%= add_dur[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_per" value="<%= add_per[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_div" value="<%= add_div[i] %>"  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="grid justify-items-center">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <!-- <div class="sm:col-span-9 grid grid-cols-9 gap-x-2 field-set">
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_uni" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_deg" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_bra" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_yoj" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_yoc" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_dur" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_per" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <input type="text" name="add_div" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                            </div>
+                            <div class="sm:col-span-1">
+                                <div class="grid justify-items-center">
+                                <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white">Remove</button>
+                                </div> 
+                        </div> -->
+                        <script>
+                            document.getElementById('add_edu').addEventListener('click', function(){
+                                var container = document.getElementById('ADD_EDU');
+                                var newFieldSet = document.createElement('div');
+                                newFieldSet.classList.add('sm:col-span-9','grid','grid-cols-9','gap-x-2','field-set');
+                                newFieldSet.innerHTML = `
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_uni" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_deg" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_bra" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_yoj" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_yoc" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_dur" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_per" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <input type="text" name="add_div" value=""  class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <div class="grid justify-items-center">
+                                    <button type="button" class="remove-field h-9 rounded-md bg-red-700 px-2 text-white">Remove</button>
+                                    </div>
+                                `;
+                                container.appendChild(newFieldSet);
+                            });
+
+                            document.addEventListener('click', function(event) {
+                                if (event.target.classList.contains('remove-field')) {
+                                    event.target.closest('.field-set').remove();
+                                }
+                            });
+                        </script>
+                    </div>
+            </div>
+            </div> 
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <a href="./form1">
+                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Back</button>
+                </a>
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save & Next</div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+</body>
+</html>
