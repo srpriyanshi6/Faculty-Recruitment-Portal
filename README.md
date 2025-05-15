@@ -17,7 +17,8 @@ The data collected can be seen in the scheme added in the repository and the way
 
 ### 1. Login and SignUp
 The portal employes a secure signup and authentication for the users
-![screenshot](https://github.com/user-attachments/assets/c9f43014-17d1-4146-8eec-9a6ea197a967)
+![screenshot](https://github.com/user-attachments/assets/78ac057e-bb4c-48cc-932f-515170de6730)
+
 
 ### 2. Dynamic Form for varied amounts of data
 Based on the amount of data, the form can be editted to include more fields or delete certain fields allowing users to enter all necessary info
